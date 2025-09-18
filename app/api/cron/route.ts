@@ -76,7 +76,7 @@ export async function GET(request: Request) {
 
         return NextResponse.json({
             message: "Ok",
-            data: updatedProducts,
+            updatedCount: updatedProducts.filter(Boolean).length,
         });
     } catch (error: any) {
         throw new Error(`Failed to get all products: ${error.message}`);
